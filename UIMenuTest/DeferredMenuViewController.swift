@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  DeferredMenuViewController.swift
 //  UIMenuTest
 //
-//  Created by Brandon Suarez on 10/21/23.
+//  Created by Brandon Suarez on 11/7/23.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class DeferredMenuViewController: UIViewController {
     let button = UIButton()
     let label = UILabel()
     let actionLabel = UILabel()
@@ -16,16 +16,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupController()
         setupViews()
-        setupUIMenu()
+        setupDeferredMenu()
     }
     
 }
 
 // MARK: - UIMenu
 
-extension ViewController {
+extension DeferredMenuViewController {
     
-    func setupUIMenu() {
+    func setupDeferredMenu() {
         let actionA = UIAction(title: "Share", image: .init(systemName: "paperplane.fill"), identifier: nil, discoverabilityTitle: nil, attributes: [], state: .off) { [unowned self] action in
             print("Action Share Performed")
             self.setActionLabelText(text: "Action Share Performed")
@@ -36,9 +36,22 @@ extension ViewController {
             self.setActionLabelText(text: "Action Copy Performed")
         }
         
-        let actionC = UIAction(title: "Hiden", image: .init(systemName: "eye.slash"), identifier: nil, discoverabilityTitle: nil, attributes: [.disabled], state: .off) { [unowned self] action in
+        let actionC = UIAction(title: "Hidden", image: .init(systemName: "eye.slash"), identifier: nil, discoverabilityTitle: nil, attributes: [.disabled], state: .off) { [unowned self] action in
             print("Action Hiden Performed")
-            self.setActionLabelText(text: "Action Hiden Performed")
+            self.setActionLabelText(text: "Action Hidden Performed")
+        }
+        
+        let asyncItem = UIDeferredMenuElement {  completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                let favoriteAction = UIAction(title: "Favorite", image: UIImage(systemName: "star")) { [unowned self] _ in
+                    self.setActionLabelText(text: "Action Favorited Performed")
+                }
+                let editAction = UIAction(title: "Edit", image: UIImage(systemName: "pencil")) { [unowned self] (_) in
+                    
+                    self.setActionLabelText(text: "Action Edit Performed")
+                }
+                completion([favoriteAction, editAction])
+            }
         }
         
         let actionD = UIAction(title: "Delete", image: .init(systemName: "trash"), identifier: nil, discoverabilityTitle: nil, attributes: [.destructive], state: .off) { [unowned self] action in
@@ -46,7 +59,7 @@ extension ViewController {
             self.setActionLabelText(text: "Action Delete Performed")
         }
         
-        let menu = UIMenu(title: "Options Menu", children: [actionA, actionB, actionC, actionD])
+        let menu = UIMenu(title: "Options Menu", children: [actionA, actionB, actionC, actionD, asyncItem])
         
         button.menu = menu
         button.showsMenuAsPrimaryAction = true
@@ -55,14 +68,13 @@ extension ViewController {
 }
 
 // MARK: - Set up
-extension ViewController {
+extension DeferredMenuViewController {
     
     func setupController() {
         view.backgroundColor = .white
-        title = "UIMenu"
+        title = "Deferred Menu Element"
         navigationController?.navigationBar.prefersLargeTitles = true
         setupViews()
-        setupBarButton()
     }
     
     func setupViews() {
@@ -75,20 +87,11 @@ extension ViewController {
         setupActionLabel()
     }
     
-    func setupBarButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(didTapAddButton))
-    }
-    
-    @objc func didTapAddButton() {
-        let controller = MenuWithSeparatorsViewController()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
     func setupLabel() {
         
-        label.text = "A UIMenu, is composed out of UIAction elements, which are added as part of the UIMenu's initialization."
+        label.text = "A UIDeferredMenuElement, is used when the action cannot be shown right away, i.e. something must load first, in this case you can use the deferred menu element to load an action, just use the initializer, and pass the actions to the input type of the closure."
         label.font = .systemFont(ofSize: 16, weight: .regular)
-        label.numberOfLines = 4
+        label.numberOfLines = 5
         
         
         
@@ -147,4 +150,3 @@ extension ViewController {
     }
     
 }
-

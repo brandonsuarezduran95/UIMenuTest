@@ -13,6 +13,11 @@
 		994F1AD72AE3A50C00C5F2A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994F1AD52AE3A50C00C5F2A6 /* Main.storyboard */; };
 		994F1AD92AE3A50F00C5F2A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 994F1AD82AE3A50F00C5F2A6 /* Assets.xcassets */; };
 		994F1ADC2AE3A50F00C5F2A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994F1ADA2AE3A50F00C5F2A6 /* LaunchScreen.storyboard */; };
+		994F1AE42AE3BDEC00C5F2A6 /* MenuWithSeparatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F1AE32AE3BDEC00C5F2A6 /* MenuWithSeparatorsViewController.swift */; };
+		994F1AEA2AF327BA00C5F2A6 /* MenuOnTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F1AE92AF327BA00C5F2A6 /* MenuOnTableViewViewController.swift */; };
+		994F1AEC2AF768B600C5F2A6 /* MenuOnCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F1AEB2AF768B600C5F2A6 /* MenuOnCollectionViewViewController.swift */; };
+		994F1AEE2AF7F4B600C5F2A6 /* SampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F1AED2AF7F4B600C5F2A6 /* SampleCollectionViewCell.swift */; };
+		994F1AF92AFA216900C5F2A6 /* DeferredMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F1AF82AFA216900C5F2A6 /* DeferredMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		994F1AD82AE3A50F00C5F2A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		994F1ADB2AE3A50F00C5F2A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		994F1ADD2AE3A50F00C5F2A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		994F1AE32AE3BDEC00C5F2A6 /* MenuWithSeparatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWithSeparatorsViewController.swift; sourceTree = "<group>"; };
+		994F1AE92AF327BA00C5F2A6 /* MenuOnTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOnTableViewViewController.swift; sourceTree = "<group>"; };
+		994F1AEB2AF768B600C5F2A6 /* MenuOnCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOnCollectionViewViewController.swift; sourceTree = "<group>"; };
+		994F1AED2AF7F4B600C5F2A6 /* SampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCollectionViewCell.swift; sourceTree = "<group>"; };
+		994F1AF82AFA216900C5F2A6 /* DeferredMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +69,25 @@
 				994F1ACF2AE3A50C00C5F2A6 /* AppDelegate.swift */,
 				994F1AD12AE3A50C00C5F2A6 /* SceneDelegate.swift */,
 				994F1AD32AE3A50C00C5F2A6 /* ViewController.swift */,
+				994F1AE32AE3BDEC00C5F2A6 /* MenuWithSeparatorsViewController.swift */,
+				994F1AE92AF327BA00C5F2A6 /* MenuOnTableViewViewController.swift */,
+				994F1AF82AFA216900C5F2A6 /* DeferredMenuViewController.swift */,
+				994F1AF52AFA1CFD00C5F2A6 /* Menu On CollectionView */,
 				994F1AD52AE3A50C00C5F2A6 /* Main.storyboard */,
 				994F1AD82AE3A50F00C5F2A6 /* Assets.xcassets */,
 				994F1ADA2AE3A50F00C5F2A6 /* LaunchScreen.storyboard */,
 				994F1ADD2AE3A50F00C5F2A6 /* Info.plist */,
 			);
 			path = UIMenuTest;
+			sourceTree = "<group>";
+		};
+		994F1AF52AFA1CFD00C5F2A6 /* Menu On CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				994F1AED2AF7F4B600C5F2A6 /* SampleCollectionViewCell.swift */,
+				994F1AEB2AF768B600C5F2A6 /* MenuOnCollectionViewViewController.swift */,
+			);
+			path = "Menu On CollectionView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994F1AF92AFA216900C5F2A6 /* DeferredMenuViewController.swift in Sources */,
+				994F1AEC2AF768B600C5F2A6 /* MenuOnCollectionViewViewController.swift in Sources */,
 				994F1AD42AE3A50C00C5F2A6 /* ViewController.swift in Sources */,
+				994F1AE42AE3BDEC00C5F2A6 /* MenuWithSeparatorsViewController.swift in Sources */,
 				994F1AD02AE3A50C00C5F2A6 /* AppDelegate.swift in Sources */,
+				994F1AEE2AF7F4B600C5F2A6 /* SampleCollectionViewCell.swift in Sources */,
 				994F1AD22AE3A50C00C5F2A6 /* SceneDelegate.swift in Sources */,
+				994F1AEA2AF327BA00C5F2A6 /* MenuOnTableViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +321,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +329,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brandon-suarez.UIMenuTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,8 +351,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +359,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brandon-suarez.UIMenuTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
