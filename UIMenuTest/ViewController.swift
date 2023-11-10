@@ -46,10 +46,16 @@ extension ViewController {
             self.setActionLabelText(text: "Action Delete Performed")
         }
         
+        let actionE = UICommand(title: "Command", image: .init(systemName: "list.dash.header.rectangle"),action: #selector(didTapActionE))
+        
         let menu = UIMenu(title: "Options Menu", children: [actionA, actionB, actionC, actionD])
         
         button.menu = menu
         button.showsMenuAsPrimaryAction = true
+    }
+    
+    @objc func didTapActionE() {
+        setActionLabelText(text: "Action Command Performed")
     }
 
 }

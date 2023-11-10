@@ -180,9 +180,12 @@ extension MenuWithSeparatorsViewController {
         }
         
         let submenu = UIMenu(title: "More", options: .destructive, children: secondaryActions)
+        let secondSubmenu = UIMenu(title: "Much More", options: .singleSelection, children: secondaryActions)
         primaryActions.append(submenu)
+        primaryActions.append(secondSubmenu)
         
         let menu = UIMenu(title: "ToolBar Menu", image: nil, children: primaryActions)
+
         
         let toolbarButton = UIBarButtonItem(title: nil, image: UIImage(systemName: "square.and.arrow.up"), primaryAction: nil, menu: menu)
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
